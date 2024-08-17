@@ -1,0 +1,13 @@
+{
+    "name": "mcspambot",
+    "version": "1.0.0",
+    "author": "besuper",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "async": "3.2.5",
+        "minecraft-protocol": "1.47.0",
+        "proxy-agent": "^6.4.0",
+        "socks": "2.8.3"
+    }
+}
